@@ -6,7 +6,7 @@ import VueTypeImports from 'vite-plugin-vue-type-imports'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/vue3-dz-ui/' : '',
+  // base: process.env.NODE_ENV === 'production' ? '/vue3-dz-ui/' : '',
   plugins: [vue(), DefineOptions(), VueTypeImports()],
   css: {
     preprocessorOptions: {
@@ -22,5 +22,8 @@ export default defineConfig({
   },
   server: {
     open: true,
+  },
+  define: {
+    'process.env': process.env,
   },
 })
