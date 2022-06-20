@@ -45,6 +45,7 @@ module.exports = defineConfig({
     // js/ts
     // 'no-console': ['warn', { allow: ['error'] }],
     'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
+    // 'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
     camelcase: ['error', { properties: 'never' }],
 
     'no-var': 'error',

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const msg = process.env.TEST_VARIABLE
+const msg2 = import.meta.env
 </script>
 
 <template>
