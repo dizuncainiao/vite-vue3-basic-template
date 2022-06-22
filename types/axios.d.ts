@@ -1,6 +1,5 @@
 export interface Result<T = any> {
-  code: number
-  type: 'success' | 'error' | 'warning'
-  message: string
+  rspCode: number
+  rspMsg: string
   data: T
 }

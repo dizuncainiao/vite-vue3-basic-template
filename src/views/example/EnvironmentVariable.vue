@@ -19,9 +19,10 @@ const result = await login({
   passWord: 'wangbo153/',
   terminaltype: 'WEB',
   auto: 0,
-  token: '',
+}).catch((err) => {
+  console.log('result_err', err)
 })
-console.log(result, 'line 19')
+console.log('result', result)
 </script>
 
 <script lang="ts">

@@ -1,5 +1,6 @@
 import axios from 'axios'
 // import qs from 'qs'
+import { RspCode, StatusCode } from './EnumAxios'
 import type {
   AxiosRequestConfig,
   AxiosInstance,
@@ -13,10 +14,41 @@ export default class VAxios {
 
   constructor(config: AxiosRequestConfig) {
     this.axiosInstance = axios.create(config)
+    this.initInterceptors()
   }
 
   initInterceptors() {
-    this.axiosInstance.interceptors.request.use(function () {})
+    this.axiosInstance.interceptors.request.use((config) => {
+      config.headers = {
+        ...config.headers,
+        // ...
+      }
+      // console.log(config, 'config')
+      return config
+    })
+
+    this.axiosInstance.interceptors.response.use(
+      (response: AxiosResponse<Result>) => {
+        console.log(response, 'response')
+        try {
+          if (response.status === StatusCode.SUCCESS) {
+            if (response.data?.rspCode === RspCode.SUCCESS) {
+              return Promise.resolve(response.data.data)
+            } else {
+              return Promise.reject('ERROR')
+            }
+          } else {
+            return Promise.reject('ERROR')
+          }
+        } catch (e) {
+          return Promise.reject(e)
+        }
+      },
+      (err: AxiosError) => {
+        console.log('onRejected', err)
+        return Promise.reject(err.message)
+      }
+    )
   }
 
   request<T = any>(config: AxiosRequestConfig): Promise<T> {
