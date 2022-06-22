@@ -23,8 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { storeToRefs } from 'pinia'
 import { useStore } from '@/store/useStore'
 
 const prefix = ref('')

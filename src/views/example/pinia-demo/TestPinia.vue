@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { useStore } from '@/store/useStore'
 import PiniaOne from '@/views/example/pinia-demo/PiniaOne.vue'
 import PiniaTwo from '@/views/example/pinia-demo/PiniaTwo.vue'

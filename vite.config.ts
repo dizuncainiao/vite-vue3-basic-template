@@ -6,6 +6,7 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 import VueTypeImports from 'vite-plugin-vue-type-imports'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig(({ command, mode }) => {
   const root = process.cwd()
@@ -26,6 +27,12 @@ export default defineConfig(({ command, mode }) => {
             resolveIcons: true,
           }),
         ],
+      }),
+      AutoImport({
+        imports: ['vue', 'pinia'],
+        dts: 'src/auto-imports.d.ts',
+        dirs: ['src/store'],
+        vueTemplate: true,
       }),
     ],
     css: {
