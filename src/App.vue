@@ -1,14 +1,17 @@
-<script setup lang="ts">
-const msg = process.env.TEST_VARIABLE
-const msg2 = import.meta.env
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  {{ msg }}
+  <RouterView v-slot="{ Component }">
+    <Suspense>
+      <div class="main-layout">
+        <component :is="Component"></component>
+      </div>
+    </Suspense>
+  </RouterView>
 </template>
 
 <style>
-#app {
+.main-layout {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
