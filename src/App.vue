@@ -8,6 +8,10 @@
       </div>
     </Suspense>
   </RouterView>
+  <a-button type="primary">
+    <play-circle-outlined />
+    click
+  </a-button>
 </template>
 
 <style>
