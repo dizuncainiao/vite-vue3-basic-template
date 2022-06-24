@@ -7,7 +7,7 @@ import 'nprogress/nprogress.css'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/testPinia',
+    redirect: '/environmentVariable',
   },
   {
     path: '/testPinia',
