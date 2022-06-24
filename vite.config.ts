@@ -49,6 +49,13 @@ export default defineConfig(({ command, mode }) => {
     },
     server: {
       open: true,
+      proxy: {
+        '/bdsaas': {
+          target: 'https://vip.bdsaas.com',
+          changeOrigin: true,
+          secure: true,
+        },
+      },
     },
     define: {
       __APP_VERSION__: JSON.stringify({ version: '1.0.0' }),

@@ -25,10 +25,10 @@ interface LoginResultModel {
 }
 
 export const login = (params: LoginParams) =>
-  request.post<LoginResultModel>({ url: '/main/login.do', params })
+  request.post<LoginResultModel>({ url: 'main/login.do', params })
 
 export const logout = (params: Token) =>
-  request.post<null>({ url: '/main/logout.do', params })
+  request.post<null>({ url: 'main/logout.do', params })
 
 interface LogisticsSchedulesParams {
   page: number
@@ -40,7 +40,7 @@ interface LogisticsSchedulesParams {
 export type Token = Omit<LogisticsSchedulesParams, 'page' | 'pageSize'>
 
 export const getLogisticsSchedules = (params: LogisticsSchedulesParams) =>
-  request.get<any>({
-    url: '/logistics/logisticsScheduling/getLogisticsSchedules.do',
+  request.get<Array<Record<string, any>>>({
+    url: 'logistics/logisticsScheduling/getLogisticsSchedules.do',
     params,
   })

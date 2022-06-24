@@ -37,7 +37,7 @@ export default class VAxios {
               response.data?.rspMsg && message.info(response.data.rspMsg)
               return Promise.resolve(response.data)
             } else {
-              return Promise.reject('ERROR')
+              return Promise.reject(response.data)
             }
           } else {
             return Promise.reject('ERROR')

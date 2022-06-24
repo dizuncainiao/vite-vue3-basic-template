@@ -65,18 +65,22 @@ function getList() {
     ...state,
   })
     .then((res) => {
-      console.log(res, '获取到列表数据')
+      console.log(res.data, '获取到列表数据')
     })
     .catch((err) => {
-      console.log(err, '获取列表数据错误')
+      message.error(err.rspMsg)
     })
 }
 
 function logoutHandler() {
-  logout(state).then((res) => {
-    message.info('退出登录！')
-    console.log(res, 'logout')
-  })
+  logout(state)
+    .then((res) => {
+      message.info('退出登录！')
+      console.log(res, 'logout')
+    })
+    .catch((err) => {
+      message.error(err.rspMsg)
+    })
 }
 </script>
 
