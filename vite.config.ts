@@ -9,10 +9,14 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig(({ command, mode }) => {
-  const root = process.cwd()
   const env = loadEnv(mode, cwd())
+  const { VITE_HOST } = env
   console.log('================================')
-  console.log(command, root, env)
+  console.log(
+    `command:${command}`,
+    `mode:${mode}`,
+    `env:${JSON.stringify(env)}`
+  )
   console.log('================================')
 
   return {
@@ -51,7 +55,7 @@ export default defineConfig(({ command, mode }) => {
       open: true,
       proxy: {
         '/bdsaas': {
-          target: 'https://vip.bdsaas.com',
+          target: VITE_HOST,
           changeOrigin: true,
           secure: true,
         },
