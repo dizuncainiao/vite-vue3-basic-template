@@ -4,7 +4,7 @@
     <a-divider style="height: 1px; background-color: #7cb305" />
     {{ msg2 }}
     <a-divider style="height: 1px; background-color: #7cb305" />
-    {{ version }}
+    {{ version }}-{{ name }}
   </div>
   <a-divider style="height: 1px; background-color: #7cb305" />
   <a-space>
@@ -30,7 +30,7 @@ import { getLogisticsSchedules, login, logout } from '@/api/system/login'
 
 const msg = process.env.TEST_VARIABLE
 const msg2 = import.meta.env
-const { version } = __APP_VERSION__
+const { name, version } = __APP_VERSION__
 const state = reactive<Token>({
   token: '',
   COMPANYID: null,

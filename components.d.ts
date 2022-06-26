@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
     ADivider: typeof import('ant-design-vue/es')['Divider']
     ASpace: typeof import('ant-design-vue/es')['Space']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    LoginOutlined: typeof import('@ant-design/icons-vue')['LoginOutlined']
     PlayCircleOutlined: typeof import('@ant-design/icons-vue')['PlayCircleOutlined']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

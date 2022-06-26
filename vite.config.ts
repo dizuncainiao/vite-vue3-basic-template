@@ -62,7 +62,7 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     define: {
-      __APP_VERSION__: JSON.stringify({ version: '1.0.0' }),
+      __APP_VERSION__: JSON.stringify({ name: 'vite-demo', version: '1.0.0' }),
       'process.env': process.env,
     },
   }

@@ -2,11 +2,11 @@
 
 <template>
   <RouterView v-slot="{ Component }">
-    <Suspense>
-      <div class="main-layout">
-        <component :is="Component"></component>
-      </div>
-    </Suspense>
+    <!--    <Suspense>-->
+    <div class="main-layout">
+      <component :is="Component"></component>
+    </div>
+    <!--    </Suspense>-->
   </RouterView>
 </template>
 
