@@ -34,8 +34,8 @@ export default {
 
 <style lang="less">
 .pinia-box {
-  margin: 20px;
   padding: 20px;
+  margin: 20px;
   border: 2px dashed lightpink;
 }
 </style>

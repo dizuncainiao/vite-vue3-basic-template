@@ -10,7 +10,8 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0 && pretty-quick --check --branch dev",
-    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx && pretty-quick --branch dev"
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx && pretty-quick",
+    "stylelint:fix": "stylelint \"**/*.{vue,less,css}\" --fix"
   },
   "config": {
     "commitizen": {
@@ -57,8 +58,18 @@
     "eslint-plugin-vue": "^8.5.0",
     "jsdom": "^19.0.0",
     "less": "^4.1.2",
+    "postcss": "^8.4.14",
+    "postcss-html": "^1.4.1",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.6.1",
     "pretty-quick": "^3.1.3",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-less": "^1.0.6",
     "typescript": "^4.5.4",
     "unplugin-auto-import": "^0.8.8",
     "unplugin-vue-components": "^0.19.6",

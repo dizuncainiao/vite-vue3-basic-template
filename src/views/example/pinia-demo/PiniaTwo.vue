@@ -9,12 +9,12 @@
     doubleCounter: ${doubleCounter}`
     }}
     <br />
-    <label style="display: inline-flex; align-items: center"
+    <label style="display: inline-flex; align-items: center;"
       >管理员姓名：
       <input v-model="name" type="text" />
     </label>
     <br />
-    <label style="display: inline-flex; align-items: center"
+    <label style="display: inline-flex; align-items: center;"
       >名字前缀：
       <input v-model="prefix" type="text" />
       {{ prettifyName(prefix) }}

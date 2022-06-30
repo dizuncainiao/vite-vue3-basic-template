@@ -1,12 +1,12 @@
 <template>
   <div>
     {{ msg }}
-    <a-divider style="height: 1px; background-color: #7cb305" />
+    <a-divider style="height: 1px; background-color: #7cb305;" />
     {{ msg2 }}
-    <a-divider style="height: 1px; background-color: #7cb305" />
+    <a-divider style="height: 1px; background-color: #7cb305;" />
     {{ version }}-{{ name }}
   </div>
-  <a-divider style="height: 1px; background-color: #7cb305" />
+  <a-divider style="height: 1px; background-color: #7cb305;" />
   <a-space>
     <a-button type="primary" @click="loginHandler">
       <play-circle-outlined />
