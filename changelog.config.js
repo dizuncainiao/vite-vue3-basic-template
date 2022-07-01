@@ -38,7 +38,7 @@ module.exports = {
     },
     docs: {
       description: '仅文档相关的更改',
-      emoji: '📚',
+      emoji: '📝',
       value: 'docs',
     },
     feat: {
@@ -68,7 +68,7 @@ module.exports = {
     },
     style: {
       description: '标记、空格、格式、缺少分号...',
-      emoji: '💄',
+      emoji: '🎨',
       value: 'style',
     },
     test: {
@@ -78,17 +78,17 @@ module.exports = {
     },
     revert: {
       description: '恢复之前的提交',
-      emoji: '🗑',
+      emoji: '↪️',
       value: 'revert',
     },
     messages: {
-      type: "Select the type of change that you're committing:",
-      customScope: 'Select the scope this component affects:',
-      subject: 'Write a short, imperative mood description of the change:\n',
-      body: 'Provide a longer description of the change:\n ',
-      breaking: 'List any breaking changes:\n',
-      footer: 'Issues this commit closes, e.g #123:',
-      confirmCommit: 'The packages that this commit has affected\n',
+      type: '选择您要提交的更改类型：',
+      customScope: '选择这个组件影响的范围:',
+      subject: '写一个简短的、命令式的变化描述:\n',
+      body: '提供更详细的更改描述:\n ',
+      breaking: '列出所有重大更改:\n',
+      footer: '这个提交关闭的问题，例如 #123:',
+      confirmCommit: '这个提交影响的包\n',
     },
   },
 }
