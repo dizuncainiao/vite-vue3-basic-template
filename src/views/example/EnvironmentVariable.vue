@@ -39,7 +39,7 @@ const state = reactive<Token>({
 function loginHandler() {
   login({
     userName: 18156224704,
-    passWord: 'wangbo153/',
+    passWord: 'wangbo12345',
     terminaltype: 'WEB',
     auto: 0,
   })
