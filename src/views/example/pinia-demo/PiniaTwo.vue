@@ -36,5 +36,3 @@ export default {
   name: 'PiniaTwo',
 }
 </script>
-
-<style scoped></style>

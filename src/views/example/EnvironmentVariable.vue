@@ -47,7 +47,7 @@ function loginHandler() {
       const {
         auth: { accessToken },
         companyId,
-      } = res.data
+      } = res?.data ?? {}
       state.token = accessToken
       state.COMPANYID = companyId
       message.success('登录成功！')
@@ -89,5 +89,3 @@ export default {
   name: 'EnvironmentVariable',
 }
 </script>
-
-<style scoped></style>

@@ -28,5 +28,3 @@ export default {
   name: 'PiniaOne',
 }
 </script>
-
-<style scoped></style>
