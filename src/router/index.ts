@@ -12,26 +12,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/testPinia',
     name: 'TestPinia',
-    component: () =>
-      import(
-        /* webpackChunkName: "testPinia" */ '@/views/example/pinia-demo/TestPinia.vue'
-      ),
+    component: () => import('@/views/example/pinia-demo/TestPinia.vue'),
   },
   {
     path: '/testPinia',
     name: 'TestPinia',
-    component: () =>
-      import(
-        /* webpackChunkName: "testPinia" */ '@/views/example/pinia-demo/TestPinia.vue'
-      ),
+    component: () => import('@/views/example/pinia-demo/TestPinia.vue'),
   },
   {
     path: '/environmentVariable',
     name: 'EnvironmentVariable',
-    component: () =>
-      import(
-        /* webpackChunkName: "EnvironmentVariable" */ '@/views/example/EnvironmentVariable.vue'
-      ),
+    component: () => import('@/views/example/EnvironmentVariable.vue'),
   },
 ]
 
