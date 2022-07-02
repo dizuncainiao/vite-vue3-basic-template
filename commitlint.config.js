@@ -19,83 +19,78 @@ module.exports = {
       2,
       'always',
       [
-        'build',
-        'chore',
-        'ci',
-        'docs',
+        'test',
         'feat',
         'fix',
-        'perf',
-        'refactor',
         'revert',
+        'chore',
+        'docs',
+        'refactor',
         'style',
-        'test',
+        'ci',
+        'perf',
       ],
     ],
   },
   prompt: {
     questions: {
       type: {
-        description: "Select the type of change that you're committing",
+        description: '选择您要提交的更改类型',
         enum: {
-          feat: {
-            description: 'A new feature',
-            title: 'Features',
-            emoji: '✨',
-          },
-          fix: {
-            description: 'A bug fix',
-            title: 'Bug Fixes',
-            emoji: '🐛',
-          },
-          docs: {
-            description: 'Documentation only changes',
-            title: 'Documentation',
-            emoji: '📚',
-          },
-          style: {
-            description:
-              'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)',
-            title: 'Styles',
-            emoji: '💎',
-          },
-          refactor: {
-            description:
-              'A code change that neither fixes a bug nor adds a feature',
-            title: 'Code Refactoring',
-            emoji: '📦',
-          },
-          perf: {
-            description: 'A code change that improves performance',
-            title: 'Performance Improvements',
-            emoji: '🚀',
-          },
-          test: {
-            description: 'Adding missing tests or correcting existing tests',
-            title: 'Tests',
-            emoji: '🚨',
-          },
-          build: {
-            description:
-              'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)',
-            title: 'Builds',
-            emoji: '🛠',
+          chore: {
+            description: '构建过程或辅助工具更改',
+            emoji: '🤖',
+            title: 'chore',
           },
           ci: {
-            description:
-              'Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)',
-            title: 'Continuous Integrations',
-            emoji: '⚙️',
+            description: 'CI 相关更改',
+            emoji: '🎡',
+            title: 'ci',
           },
-          chore: {
-            description: "Other changes that don't modify src or test files",
-            title: 'Chores',
-            emoji: '♻️',
+          docs: {
+            description: '仅文档相关的更改',
+            emoji: '📝',
+            title: 'docs',
+          },
+          feat: {
+            description: '写了一个新功能',
+            emoji: '✨',
+            title: 'feat',
+          },
+          fix: {
+            description: '修复了一个 bug',
+            emoji: '🐛',
+            title: 'fix',
+          },
+          perf: {
+            description: '提高性能的代码更改',
+            emoji: '🚀',
+            title: 'perf',
+          },
+          refactor: {
+            description: '既不修复错误也不添加功能的代码更改',
+            emoji: '💡',
+            title: 'refactor',
+          },
+          release: {
+            description: '创建发布提交',
+            emoji: '🏹',
+            title: 'release',
+          },
+          style: {
+            description: '标记、空格、格式、缺少分号...',
+            emoji: '🎨',
+            title: 'style',
+          },
+          test: {
+            description: '添加测试相关',
+            emoji: '🚨',
+            title: 'test',
           },
           revert: {
-            description: 'Reverts a previous commit',
-            title: 'Reverts',
-            emoji: '🗑',
+            description: '恢复之前的提交',
+            emoji: '↪️',
+            title: 'revert',
           },
         },
       },
