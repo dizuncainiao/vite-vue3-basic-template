@@ -28,28 +28,31 @@ export default defineConfig(({ command, mode }) => {
       Components({
         resolvers: [
           AntDesignVueResolver({
-            resolveIcons: true,
-          }),
-        ],
+            resolveIcons: true
+          })
+        ]
       }),
       AutoImport({
         imports: ['vue', 'pinia'],
         dts: 'src/auto-imports.d.ts',
         dirs: ['src/store'],
-        vueTemplate: true,
-      }),
+        eslintrc: {
+          enabled: true
+        },
+        vueTemplate: true
+      })
     ],
     css: {
       preprocessorOptions: {
         less: {
-          javascriptEnabled: true,
-        },
-      },
+          javascriptEnabled: true
+        }
+      }
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
+        '@': path.resolve(__dirname, 'src')
+      }
     },
     server: {
       open: true,
@@ -57,13 +60,13 @@ export default defineConfig(({ command, mode }) => {
         '/bdsaas': {
           target: VITE_HOST,
           changeOrigin: true,
-          secure: true,
-        },
-      },
+          secure: true
+        }
+      }
     },
     define: {
       __APP_VERSION__: JSON.stringify({ name: 'vite-demo', version: '1.0.0' }),
-      'process.env': process.env,
-    },
+      'process.env': process.env
+    }
   }
 })

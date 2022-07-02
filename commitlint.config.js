@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   parserPreset: 'conventional-changelog-conventionalcommits',
   rules: {
@@ -9,7 +10,7 @@ module.exports = {
     'subject-case': [
       2,
       'never',
-      ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
+      ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
     ],
     'subject-empty': [2, 'never'],
     'subject-full-stop': [2, 'never', '.'],
@@ -28,9 +29,9 @@ module.exports = {
         'refactor',
         'style',
         'ci',
-        'perf',
-      ],
-    ],
+        'perf'
+      ]
+    ]
   },
   prompt: {
     questions: {
@@ -40,91 +41,90 @@ module.exports = {
           chore: {
             description: '构建过程或辅助工具更改',
             emoji: '🤖',
-            title: 'chore',
+            title: 'chore'
           },
           ci: {
             description: 'CI 相关更改',
             emoji: '🎡',
-            title: 'ci',
+            title: 'ci'
           },
           docs: {
             description: '仅文档相关的更改',
             emoji: '📝',
-            title: 'docs',
+            title: 'docs'
           },
           feat: {
             description: '写了一个新功能',
             emoji: '✨',
-            title: 'feat',
+            title: 'feat'
           },
           fix: {
             description: '修复了一个 bug',
             emoji: '🐛',
-            title: 'fix',
+            title: 'fix'
           },
           perf: {
             description: '提高性能的代码更改',
             emoji: '🚀',
-            title: 'perf',
+            title: 'perf'
           },
           refactor: {
             description: '既不修复错误也不添加功能的代码更改',
             emoji: '💡',
-            title: 'refactor',
+            title: 'refactor'
           },
           release: {
             description: '创建发布提交',
             emoji: '🏹',
-            title: 'release',
+            title: 'release'
           },
           style: {
             description: '标记、空格、格式、缺少分号...',
             emoji: '🎨',
-            title: 'style',
+            title: 'style'
           },
           test: {
             description: '添加测试相关',
             emoji: '🚨',
-            title: 'test',
+            title: 'test'
           },
           revert: {
             description: '恢复之前的提交',
             emoji: '↪️',
-            title: 'revert',
-          },
-        },
+            title: 'revert'
+          }
+        }
       },
       scope: {
         description:
-          'What is the scope of this change (e.g. component or file name)',
+          'What is the scope of this change (e.g. component or file name)'
       },
       subject: {
-        description:
-          'Write a short, imperative tense description of the change',
+        description: 'Write a short, imperative tense description of the change'
       },
       body: {
-        description: 'Provide a longer description of the change',
+        description: 'Provide a longer description of the change'
       },
       isBreaking: {
-        description: 'Are there any breaking changes?',
+        description: 'Are there any breaking changes?'
       },
       breakingBody: {
         description:
-          'A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit itself',
+          'A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit itself'
       },
       breaking: {
-        description: 'Describe the breaking changes',
+        description: 'Describe the breaking changes'
       },
       isIssueAffected: {
-        description: 'Does this change affect any open issues?',
+        description: 'Does this change affect any open issues?'
       },
       issuesBody: {
         description:
-          'If issues are closed, the commit requires a body. Please enter a longer description of the commit itself',
+          'If issues are closed, the commit requires a body. Please enter a longer description of the commit itself'
       },
       issues: {
-        description: 'Add issue references (e.g. "fix #123", "re #123".)',
-      },
-    },
-  },
+        description: 'Add issue references (e.g. "fix #123", "re #123".)'
+      }
+    }
+  }
 }

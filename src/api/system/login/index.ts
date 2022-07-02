@@ -42,5 +42,5 @@ export type Token = Omit<LogisticsSchedulesParams, 'page' | 'pageSize'>
 export const getLogisticsSchedules = (params: LogisticsSchedulesParams) =>
   request.get<Array<Record<string, any>>>({
     url: 'logistics/logisticsScheduling/getLogisticsSchedules.do',
-    params,
+    params
   })

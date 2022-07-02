@@ -25,6 +25,6 @@ const { counter, name, isAdmin, doubleCounter } = storeToRefs(store)
 
 <script lang="ts">
 export default {
-  name: 'PiniaOne',
+  name: 'PiniaOne'
 }
 </script>

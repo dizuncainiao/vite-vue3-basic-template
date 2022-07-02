@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   extends: [
     'stylelint-config-standard',
-    'stylelint-config-prettier',
     'stylelint-config-recess-order',
-    'stylelint-config-standard-vue',
+    'stylelint-config-standard-vue'
+    // 'stylelint-config-prettier',
   ],
   overrides: [
     {
@@ -12,8 +13,8 @@ module.exports = {
       extends: [
         'stylelint-config-standard',
         'stylelint-config-recommended-less',
-        'stylelint-config-recess-order',
-      ],
-    },
-  ],
+        'stylelint-config-recess-order'
+      ]
+    }
+  ]
 }

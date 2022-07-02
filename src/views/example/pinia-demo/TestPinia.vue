@@ -28,7 +28,7 @@ console.log(store)
 
 <script lang="ts">
 export default {
-  name: 'TestPinia',
+  name: 'TestPinia'
 }
 </script>
 

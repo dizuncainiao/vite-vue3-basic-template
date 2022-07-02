@@ -33,6 +33,6 @@ const { counter, name, isAdmin, doubleCounter, prettifyName } =
 
 <script lang="ts">
 export default {
-  name: 'PiniaTwo',
+  name: 'PiniaTwo'
 }
 </script>

@@ -33,7 +33,7 @@ const msg2 = import.meta.env
 const { name, version } = __APP_VERSION__
 const state = reactive<Token>({
   token: '',
-  COMPANYID: null,
+  COMPANYID: null
 })
 
 function loginHandler() {
@@ -41,19 +41,19 @@ function loginHandler() {
     userName: 18156224704,
     passWord: 'wangbo12345',
     terminaltype: 'WEB',
-    auto: 0,
+    auto: 0
   })
-    .then((res) => {
+    .then(res => {
       const {
         auth: { accessToken },
-        companyId,
+        companyId
       } = res?.data ?? {}
       state.token = accessToken
       state.COMPANYID = companyId
       message.success('登录成功！')
       console.log('result_success', res)
     })
-    .catch((err) => {
+    .catch(err => {
       console.log('result_err', err)
     })
 }
@@ -62,23 +62,23 @@ function getList() {
   getLogisticsSchedules({
     page: 1,
     pageSize: 10,
-    ...state,
+    ...state
   })
-    .then((res) => {
+    .then(res => {
       console.log(res.data, '获取到列表数据')
     })
-    .catch((err) => {
+    .catch(err => {
       message.error(err.rspMsg)
     })
 }
 
 function logoutHandler() {
   logout(state)
-    .then((res) => {
+    .then(res => {
       message.info('退出登录！')
       console.log(res, 'logout')
     })
-    .catch((err) => {
+    .catch(err => {
       message.error(err.rspMsg)
     })
 }
@@ -86,6 +86,6 @@ function logoutHandler() {
 
 <script lang="ts">
 export default {
-  name: 'EnvironmentVariable',
+  name: 'EnvironmentVariable'
 }
 </script>

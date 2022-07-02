@@ -6,7 +6,7 @@ import type {
   AxiosRequestConfig,
   AxiosInstance,
   AxiosResponse,
-  AxiosError,
+  AxiosError
 } from 'axios'
 import type { ResponseResult } from '#/axios'
 
@@ -19,9 +19,9 @@ export default class VAxios {
   }
 
   initInterceptors() {
-    this.axiosInstance.interceptors.request.use((config) => {
+    this.axiosInstance.interceptors.request.use(config => {
       config.headers = {
-        ...config.headers,
+        ...config.headers
         // ...
       }
       // console.log(config, 'config')
@@ -52,7 +52,7 @@ export default class VAxios {
         // 请求失败（400~）
         notification['error']({
           message: code,
-          description: message,
+          description: message
         })
 
         return Promise.reject(err.message)
@@ -80,14 +80,14 @@ export default class VAxios {
   post<T = any>(config: AxiosRequestConfig): Promise<ResponseResult<T>> {
     return this.request({
       ...config,
-      method: 'POST',
+      method: 'POST'
     })
   }
 
   get<T = any>(config: AxiosRequestConfig): Promise<ResponseResult<T>> {
     return this.request({
       ...config,
-      method: 'GET',
+      method: 'GET'
     })
   }
 }

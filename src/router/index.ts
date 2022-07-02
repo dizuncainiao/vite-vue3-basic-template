@@ -7,28 +7,28 @@ import 'nprogress/nprogress.css'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/environmentVariable',
+    redirect: '/environmentVariable'
   },
   {
     path: '/testPinia',
     name: 'TestPinia',
-    component: () => import('@/views/example/pinia-demo/TestPinia.vue'),
+    component: () => import('@/views/example/pinia-demo/TestPinia.vue')
   },
   {
     path: '/testPinia',
     name: 'TestPinia',
-    component: () => import('@/views/example/pinia-demo/TestPinia.vue'),
+    component: () => import('@/views/example/pinia-demo/TestPinia.vue')
   },
   {
     path: '/environmentVariable',
     name: 'EnvironmentVariable',
-    component: () => import('@/views/example/EnvironmentVariable.vue'),
-  },
+    component: () => import('@/views/example/EnvironmentVariable.vue')
+  }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 })
 
 router.beforeEach(() => {
