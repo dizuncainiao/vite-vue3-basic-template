@@ -10,17 +10,13 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, cwd())
-  const { VITE_HOST } = env
-  console.log('================================')
   console.log(
     `command:${command}`,
     `mode:${mode}`,
     `env:${JSON.stringify(env)}`
   )
-  console.log('================================')
 
   return {
-    // base: process.env.NODE_ENV === 'production' ? '/vue3-dz-ui/' : '',
     plugins: [
       vue(),
       DefineOptions(),
@@ -55,14 +51,7 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     server: {
-      open: true,
-      proxy: {
-        '/bdsaas': {
-          target: VITE_HOST,
-          changeOrigin: true,
-          secure: true
-        }
-      }
+      open: true
     },
     define: {
       __APP_VERSION__: JSON.stringify({ name: 'vite-demo', version: '1.0.0' }),

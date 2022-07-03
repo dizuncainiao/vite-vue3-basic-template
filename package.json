@@ -1,9 +1,9 @@
 {
-  "name": "vue3-vite2-ts-basic",
+  "name": "vite-vue3-basic-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "cross-env TEST_VARIABLE=hello_world vite --host",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest",

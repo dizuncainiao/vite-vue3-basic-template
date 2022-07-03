@@ -26,12 +26,6 @@ const { counter, name, isAdmin, doubleCounter } = storeToRefs(store)
 console.log(store)
 </script>
 
-<script lang="ts">
-export default {
-  name: 'TestPinia'
-}
-</script>
-
 <style lang="less">
 .pinia-box {
   padding: 20px;
