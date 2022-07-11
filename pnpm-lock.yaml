@@ -33,6 +33,7 @@ specifiers:
   prettier: ^2.7.1
   qs: ^6.10.5
   stylelint: ^14.9.1
+  stylelint-config-html: ^1.0.0
   stylelint-config-prettier: ^9.0.3
   stylelint-config-recess-order: ^3.0.0
   stylelint-config-recommended-less: ^1.0.4
@@ -88,6 +89,7 @@ devDependencies:
   postcss-less: 6.0.0_postcss@8.4.14
   prettier: 2.7.1
   stylelint: 14.9.1
+  stylelint-config-html: 1.0.0_rbvrlex3zkw5dqq3eg5f64dp2u
   stylelint-config-prettier: 9.0.3_stylelint@14.9.1
   stylelint-config-recess-order: 3.0.0_stylelint@14.9.1
   stylelint-config-recommended-less: 1.0.4
