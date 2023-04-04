@@ -1,100 +1,71 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
-import qs from 'qs'
-import { HttpAxiosConfig, InterceptorsType } from './types'
+import { CreateAxiosDefaults } from 'axios'
+
+type ResponseDataWrapper<T = any> = {
+  data: T
+  rspCode: number
+  rspMsg: string
+}
 
 export default class AxiosHttp {
   private readonly axiosInstance: AxiosInstance
-  private _requestInterceptor: number | null = null
-  private _responseInterceptor: number | null = null
 
-  constructor(httpAxiosConfig: HttpAxiosConfig) {
-    this.axiosInstance = axios.create(httpAxiosConfig.config)
-    // this.initInterceptors(httpAxiosConfig.interceptors)
+  constructor(config: CreateAxiosDefaults) {
+    this.axiosInstance = axios.create(config)
+    this.initInterceptors()
   }
 
-  // initInterceptors(interceptorsConfig: HttpAxiosConfig['interceptors']) {
-  //   const { request, response } = interceptorsConfig
-  //
-  //   this._requestInterceptor = this.axiosInstance.interceptors.request.use(
-  //     request.onFulfilled,
-  //     request.onRejected
-  //   )
-  //   this._responseInterceptor = this.axiosInstance.interceptors.response.use(
-  //     response.onFulfilled,
-  //     response.onRejected
-  //   )
-  // }
-
-  ejectInterceptors(type: InterceptorsType) {
-    this.axiosInstance.interceptors[type].eject(
-      this[`_${type}Interceptor`] as number
+  initInterceptors() {
+    this.axiosInstance.interceptors.request.use(
+      config => {
+        return config
+      },
+      error => {
+        return Promise.reject(error)
+      }
     )
-  }
 
-  get<T = any>(url: string, config?: AxiosRequestConfig) {
-    return new Promise<T>((resolve, reject) => {
-      this.axiosInstance
-        .get<T>(url, config)
-        .then(res => {
-          return resolve(res as T)
-        })
-        .catch(err => {
-          return reject(err)
-        })
+    this.axiosInstance.interceptors.response.use(config => {
+      // 状态 200 且 data 正常有值
+      if (config.status === 200 && config.data) {
+        // config.data 作为接口的返回数据，可以根据后端接口数据的状态码继续细分 resolve reject
+        return Promise.resolve(config.data)
+      } else {
+        return Promise.reject(`${config.statusText}: Bad Request!`)
+      }
     })
   }
 
-  post<T = any>(url: string, data?: any, config?: AxiosRequestConfig) {
-    return new Promise<T>((resolve, reject) => {
-      this.axiosInstance
-        .post<T>(url, data, config)
-        .then(res => {
-          return resolve(res as T)
-        })
-        .catch(err => {
-          return reject(err)
-        })
-    })
-  }
-
-  postForm<T = any>(url: string, data?: any, config?: AxiosRequestConfig) {
-    return new Promise<T>((resolve, reject) => {
-      this.axiosInstance
-        .postForm<T>(url, data, config)
-        .then(res => {
-          return resolve(res as T)
-        })
-        .catch(err => {
-          return reject(err)
-        })
-    })
-  }
-
-  download(url: string, params: Record<string, any>) {
-    window.open(
-      `${url}${params ? '?'.concat(qs.stringify(params)) : ''}`,
-      '_blank'
-    )
-  }
-
-  upload(
+  post<T = any, R = ResponseDataWrapper<T>>(
     url: string,
-    file: File,
-    fieldName = 'file',
+    data?: any,
     config?: AxiosRequestConfig
   ) {
-    config = {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      },
-      ...config
-    }
-
-    const data = { [fieldName]: file }
-    return this.post(url, data, config)
+    return new Promise<R>((resolve, reject) => {
+      this.axiosInstance
+        .post<R>(url, data, config)
+        .then(res => {
+          return resolve(res.data)
+        })
+        .catch(err => {
+          return reject(err)
+        })
+    })
   }
 
-  get getInstance() {
-    return this.axiosInstance
+  get<T = any, R = ResponseDataWrapper<T>>(
+    url: string,
+    config?: AxiosRequestConfig
+  ) {
+    return new Promise<R>((resolve, reject) => {
+      this.axiosInstance
+        .get<R>(url, config)
+        .then(res => {
+          return resolve(res.data)
+        })
+        .catch(err => {
+          return reject(err)
+        })
+    })
   }
 }
