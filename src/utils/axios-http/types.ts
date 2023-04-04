@@ -1,9 +1,14 @@
-import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
+import {
+  CreateAxiosDefaults,
+  AxiosRequestConfig,
+  AxiosResponse,
+  AxiosError
+} from 'axios'
 
 export interface HttpAxiosConfig<
   RequestData = any,
   ResponseData = any,
-  R = AxiosRequestConfig<RequestData>
+  R = CreateAxiosDefaults<RequestData>
 > {
   config: R
   interceptors: {
