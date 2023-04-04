@@ -2,42 +2,14 @@ import * as path from 'path'
 import { cwd } from 'process'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import DefineOptions from 'unplugin-vue-define-options/vite'
+import DefineOptions from 'unplugin-vue-define-options/dist/vite'
 import VueTypeImports from 'vite-plugin-vue-type-imports'
-import Components from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
-import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, cwd())
-  console.log(
-    `command:${command}`,
-    `mode:${mode}`,
-    `env:${JSON.stringify(env)}`
-  )
 
   return {
-    plugins: [
-      vue(),
-      DefineOptions(),
-      VueTypeImports(),
-      Components({
-        resolvers: [
-          AntDesignVueResolver({
-            resolveIcons: true
-          })
-        ]
-      }),
-      AutoImport({
-        imports: ['vue', 'pinia'],
-        dts: 'src/auto-imports.d.ts',
-        dirs: ['src/store'],
-        eslintrc: {
-          enabled: true
-        },
-        vueTemplate: true
-      })
-    ],
+    plugins: [vue(), DefineOptions(), VueTypeImports()],
     css: {
       preprocessorOptions: {
         less: {
