@@ -7,17 +7,7 @@ import 'nprogress/nprogress.css'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/hello-world'
-  },
-  {
-    path: '/testPinia',
-    name: 'TestPinia',
-    component: () => import('@/views/example/pinia-demo/TestPinia.vue')
-  },
-  {
-    path: '/hello-world',
-    name: 'HelloWorld',
-    component: () => import('@/components/HelloWorld.vue')
+    component: () => import('@/views/HomePage.vue')
   }
 ]
 
