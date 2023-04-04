@@ -9,7 +9,7 @@
     doubleCounter: ${doubleCounter}`
     }}
     <br />
-    <label style="display: inline-flex; align-items: center;"
+    <label style="display: inline-flex; align-items: center"
       >是否是管理员：
       <input v-model="isAdmin" type="checkbox" />
     </label>
@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import { useStore } from '@/store/useStore'
+import { storeToRefs } from 'pinia'
 
 const store = useStore()
 const { counter, name, isAdmin, doubleCounter } = storeToRefs(store)

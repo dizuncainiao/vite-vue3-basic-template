@@ -7,6 +7,7 @@ import VueTypeImports from 'vite-plugin-vue-type-imports'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, cwd())
+  console.log(command, env)
 
   return {
     plugins: [vue(), DefineOptions(), VueTypeImports()],

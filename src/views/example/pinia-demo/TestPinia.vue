@@ -19,6 +19,7 @@
 import { useStore } from '@/store/useStore'
 import PiniaOne from '@/views/example/pinia-demo/PiniaOne.vue'
 import PiniaTwo from '@/views/example/pinia-demo/PiniaTwo.vue'
+import { storeToRefs } from 'pinia'
 
 const store = useStore()
 const { counter, name, isAdmin, doubleCounter } = storeToRefs(store)
