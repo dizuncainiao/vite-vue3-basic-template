@@ -2,7 +2,7 @@ import * as path from 'path'
 import { cwd } from 'process'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import DefineOptions from 'unplugin-vue-define-options/dist/vite'
+
 import VueTypeImports from 'vite-plugin-vue-type-imports'
 
 export default defineConfig(({ command, mode }) => {
@@ -10,7 +10,7 @@ export default defineConfig(({ command, mode }) => {
   console.log(command, env)
 
   return {
-    plugins: [vue(), DefineOptions(), VueTypeImports()],
+    plugins: [vue(), VueTypeImports()],
     css: {
       preprocessorOptions: {
         less: {
@@ -24,7 +24,10 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     server: {
-      open: true
+      open: true,
+      proxy: {
+        '/v1': 'http://192.168.21.38:1988'
+      }
     },
     define: {
       __APP_VERSION__: JSON.stringify({ name: 'vite-demo', version: '1.0.0' }),
