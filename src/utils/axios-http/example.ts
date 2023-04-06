@@ -24,9 +24,10 @@ type CallList = {
   pageSize: number
 }
 
-http.get<CallList>('/login.do').then(res => {
-  console.log(res.rspCode)
-  console.log(res.rspMsg)
-  console.log(res.data)
-  console.log(res.data.records)
-})
+type Params = {
+  pageNo: number
+  pageSize: number
+}
+
+export const topList = (params: Params) =>
+  http.get<CallList>('/v1/system/top/top_list', params)
