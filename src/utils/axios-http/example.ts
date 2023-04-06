@@ -1,4 +1,5 @@
 import AxiosHttp from '@/utils/axios-http/index'
+
 const http = new AxiosHttp({
   baseURL: '',
   timeout: 60 * 1000
