@@ -45,6 +45,20 @@ export default class AxiosHttp {
     })
   }
 
+  get<T = any>(
+    url: string,
+    params: Record<string, any> = {},
+    config: AxiosRequestConfig = {}
+  ) {
+    config = {
+      ...config,
+      url,
+      params,
+      method: 'GET'
+    }
+    return this.request<T>(config)
+  }
+
   post<T = any>(
     url: string,
     data: Record<string, any> = {},
@@ -59,56 +73,36 @@ export default class AxiosHttp {
     return this.request<T>(config)
   }
 
-  postForm<T = any, R = ResponseDataWrapper<T>>(
+  postForm<T = any>(
     url: string,
-    data?: any,
-    config?: AxiosRequestConfig
-  ) {
-    return new Promise<R>(() => {
-      this.axiosInstance
-        .postForm<R>(url, data, config)
-        .then(res => {
-          return res.data
-        })
-        .catch(err => {
-          return err
-        })
-    })
-  }
-
-  postJson<T = any, R = ResponseDataWrapper<T>>(
-    url: string,
-    data?: any,
-    config?: AxiosRequestConfig
-  ) {
-    return new Promise<R>((resolve, reject) => {
-      config = {
-        ...config,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      this.axiosInstance
-        .post<R>(url, data, config)
-        .then(res => {
-          return resolve(res.data)
-        })
-        .catch(err => {
-          return reject(err)
-        })
-    })
-  }
-
-  get<T = any>(
-    url: string,
-    params: Record<string, any> = {},
+    data: Record<string, any> = {},
     config: AxiosRequestConfig = {}
   ) {
     config = {
       ...config,
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
       url,
-      params,
-      method: 'GET'
+      data,
+      method: 'POST'
+    }
+    return this.request<T>(config)
+  }
+
+  postJson<T = any>(
+    url: string,
+    data: Record<string, any> = {},
+    config: AxiosRequestConfig = {}
+  ) {
+    config = {
+      ...config,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      url,
+      data,
+      method: 'POST'
     }
     return this.request<T>(config)
   }
