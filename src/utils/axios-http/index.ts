@@ -55,8 +55,13 @@ export default class AxiosHttp {
 
   get<T = any, R = ResponseDataWrapper<T>>(
     url: string,
-    config?: AxiosRequestConfig
+    params: Record<string, any> = {},
+    config: AxiosRequestConfig = {}
   ) {
+    config = {
+      ...config,
+      params
+    }
     return new Promise<R>((resolve, reject) => {
       this.axiosInstance
         .get<R>(url, config)
