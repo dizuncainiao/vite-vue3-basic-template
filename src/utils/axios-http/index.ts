@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
 import { CreateAxiosDefaults } from 'axios'
+import qs from 'qs'
 
 type ResponseDataWrapper<T = any> = {
   data: T
@@ -105,5 +106,29 @@ export default class AxiosHttp {
       method: 'POST'
     }
     return this.request<T>(config)
+  }
+
+  download(url: string, params: Record<string, any>) {
+    window.open(
+      `${url}${params ? '?'.concat(qs.stringify(params)) : ''}`,
+      '_blank'
+    )
+  }
+
+  upload(
+    url: string,
+    file: File,
+    fieldName = 'file',
+    config?: AxiosRequestConfig
+  ) {
+    config = {
+      ...config,
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }
+
+    const data = { [fieldName]: file }
+    return this.post(url, data, config)
   }
 }
