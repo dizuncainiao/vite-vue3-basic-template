@@ -26,7 +26,8 @@ export default defineConfig(({ command, mode }) => {
     server: {
       open: true,
       proxy: {
-        '/v1': 'http://192.168.21.38:1988'
+        '/v1': 'http://192.168.21.38:1988',
+        '/bdsaas': 'https://vip.bdsaas.com'
       }
     },
     define: {
