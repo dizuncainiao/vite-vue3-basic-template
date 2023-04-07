@@ -66,10 +66,11 @@ export default class AxiosHttp {
     config: AxiosRequestConfig = {}
   ) {
     config = {
-      ...config,
       url,
       data,
-      method: 'POST'
+      method: 'POST',
+      // 使外部调用传入的 config 优先级最高
+      ...config
     }
     return this.request<T>(config)
   }
@@ -80,13 +81,13 @@ export default class AxiosHttp {
     config: AxiosRequestConfig = {}
   ) {
     config = {
-      ...config,
       headers: {
         'Content-Type': 'multipart/form-data'
       },
       url,
       data,
-      method: 'POST'
+      method: 'POST',
+      ...config
     }
     return this.request<T>(config)
   }
@@ -97,13 +98,13 @@ export default class AxiosHttp {
     config: AxiosRequestConfig = {}
   ) {
     config = {
-      ...config,
       headers: {
         'Content-Type': 'application/json'
       },
       url,
       data,
-      method: 'POST'
+      method: 'POST',
+      ...config
     }
     return this.request<T>(config)
   }
