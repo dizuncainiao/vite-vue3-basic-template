@@ -1,4 +1,4 @@
-import * as path from 'path'
+import { resolve } from 'path'
 import { cwd } from 'process'
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -20,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
+        '@': resolve(__dirname, 'src')
       }
     },
     server: {
