@@ -68,6 +68,7 @@
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
     "@vitejs/plugin-vue": "^4.1.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vue-macros/volar": "^0.9.4",
     "@vue/compiler-sfc": "^3.2.47",
     "@vue/test-utils": "^2.3.2",
