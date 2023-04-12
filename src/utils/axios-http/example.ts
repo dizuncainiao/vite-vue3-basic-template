@@ -1,4 +1,4 @@
-import AxiosHttp from '@/utils/axios-http/index'
+import AxiosHttp from '@/utils/axios-http/http'
 
 const http = new AxiosHttp({
   baseURL: '',
