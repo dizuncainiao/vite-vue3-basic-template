@@ -4,3 +4,4 @@ dist
 node_modules
 .husky
 __snapshots__
+pnpm-lock.yaml
