@@ -11,12 +11,14 @@
     "build-only": "vite build",
     "dev": "vite",
     "format": "prettier --write src/",
+    "git-commit": "git add . && git cz",
     "preinstall": "pnpm dlx only-allow pnpm",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --fix",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "prepare": "husky",
     "preview": "vite preview",
+    "style:lint": "stylelint \"**/*.{vue,scss,css}\" --fix",
     "type-check": "vue-tsc --build --force"
   },
   "lint-staged": {
