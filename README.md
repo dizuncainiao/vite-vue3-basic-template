@@ -1,82 +1,39 @@
-# vite-vue3-basic-template
+# hello-vite5
 
-基于 `Vite4` 的工程化模板，可以帮助你快速的开始 `Vue3` 项目，使用以下工具来整合实现。
+This template should help get you started developing with Vue 3 in Vite.
 
-## 特性
+## Recommended IDE Setup
 
-- [pnpm](https://github.com/pnpm/pnpm) - ⚡ 快速的，节省磁盘空间的包管理工具。
-- [Stylelint](https://github.com/stylelint/stylelint) - 🔧 一个强大的现代 linter，可帮助您避免错误并在您的样式中强制执行约定。
-- [ESLint](https://github.com/eslint/eslint) - 🔧 查找并修复 JavaScript 代码中的问题。
-- [Prettier](https://github.com/prettier/prettier) - 🎨 _Prettier_ 是一个固执己见的代码格式化程序。
-- [Vitest](https://github.com/vitest-dev/vitest) - ⚡ Vite 原生测试框架。它很快！
-- [lint-staged](https://github.com/okonet/lint-staged) - 🚫💩 对暂存的 git 文件运行 linter，不要让 💩 溜进你的代码库！
-- [commitlint](https://github.com/conventional-changelog/commitlint) - 📓Lint Git 提交消息。
-- [ant-design-vue](https://github.com/vueComponent/ant-design-vue) - 🌈 一个基于 Ant Design 和 Vue 的企业级 UI 组件。🐜
-- [husky](https://github.com/typicode/husky) - 🐶 让 Git hooks 变得更简单，规范你的提交！
-- [TypeScript](https://github.com/microsoft/TypeScript) - 💪 现代 web 应用开发的必备语言了，当然必须要有。
-- [pinia](https://github.com/vuejs/pinia) - 🍍 直观、类型安全、轻量且灵活的 Vue Store 使用组合 API 和 DevTools 支持。
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## 使用
+## Type Support for `.vue` Imports in TS
 
-1. 安装 **pnpm**，享受闪电般的安装速度 （注：请仔细查阅这份[文档](https://pnpm.io/zh/installation#%E5%85%BC%E5%AE%B9%E6%80%A7)，避免引起不必要的与 Node.js 之间的兼容性问题）
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-   ```sh
-   $ npm install -g pnpm
-   ```
+## Customize configuration
 
-2. 安装 **commitizen** 和 **git-cz**，实现更规范、优雅的 Git 提交
+See [Vite Configuration Reference](https://vite.dev/config/).
 
-   ```sh
-   $ pnpm add commitizen git-cz -g
-   ```
+## Project Setup
 
-3. 拉代码，安装依赖
+```sh
+pnpm install
+```
 
-   ```sh
-   $ git clone https://github.com/dizuncainiao/vite-vue3-basic-template.git
+### Compile and Hot-Reload for Development
 
-   $ cd vite-vue3-basic-template
+```sh
+pnpm dev
+```
 
-   $ pnpm install
-   ```
+### Type-Check, Compile and Minify for Production
 
-4. 初始化 **husky**
+```sh
+pnpm build
+```
 
-   ```sh
-   $ pnpm run prepare
-   ```
+### Lint with [ESLint](https://eslint.org/)
 
-5. 运行组件单元测试
-
-   ```sh
-   $ pnpm run test
-   ```
-
-   一个极简的组件单元测试案例，打开控制台感受 **vitest** 的极致速度！
-
-6. 代码 Lint、格式化
-
-   ```sh
-   # Lint 和 修复 .vue .ts 代码
-   $ pnpm run lint-fix:script
-
-   # 美化及修复所有代码
-   $ pnpm run prettier:w
-
-   # 美化及修复样式代码
-   $ pnpm run lint-fix:style
-   ```
-
-   或者运行 `pnpm run lint-fix` 一键运行所有的格式化和 lint-fix。
-
-7. 提交前的 💩 代码校验？
-
-   ```sh
-   $ pnpm run git-commit
-   ```
-
-   对于提交的文件进行 eslint、stylelint 校验，以及 prettier 格式化。警告不会影响提交，但是报错会中断。绝大多数的时候，Lint 工具会自动修复错误，但是部分报错需要手动修复后才能再次进行提交。
-
-## 完结
-
-至此，准备工作已经完毕，接下来开始愉快地开发吧 😁😁
+```sh
+pnpm lint
+```
