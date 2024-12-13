@@ -4,5 +4,8 @@
     "stylelint-config-standard-vue/scss",
     "stylelint-config-recess-order",
     "stylelint-config-prettier-scss"
-  ]
+  ],
+  "rules": {
+    "no-empty-source": null
+  }
 }
